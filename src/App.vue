@@ -38,6 +38,7 @@ const translations = {
 } as const
 
 const content = computed(() => translations[locale.value])
+const assetBase = import.meta.env.BASE_URL
 
 function setLocale(nextLocale: Locale) {
   locale.value = nextLocale
@@ -180,8 +181,8 @@ const languages = [
         <p class="hero-intro">{{ content.hero.intro }}</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#experiencia">{{ content.hero.journey }} <span>↓</span></a>
-          <a v-if="locale === 'pt'" class="text-link" href="/julia-boesing-ponticelli-cv-pt.pdf" download="Julia-Boesing-Ponticelli-CV.pdf">{{ content.hero.resume }} <span>↓</span></a>
-          <a v-else class="text-link" href="/julia-boesing-ponticelli-cv-en.pdf" download="Julia-Boesing-Ponticelli-CV.pdf">{{ content.hero.resume }} <span>↓</span></a>
+          <a v-if="locale === 'pt'" class="text-link" :href="`${assetBase}julia-boesing-ponticelli-cv-pt.pdf`" download="Julia-Boesing-Ponticelli-CV.pdf">{{ content.hero.resume }} <span>↓</span></a>
+          <a v-else class="text-link" :href="`${assetBase}julia-boesing-ponticelli-cv-en.pdf`" download="Julia-Boesing-Ponticelli-CV.pdf">{{ content.hero.resume }} <span>↓</span></a>
         </div>
       </div>
       <div class="hero-art reveal delay-one" role="group" :aria-label="content.hero.portraitLabel">
