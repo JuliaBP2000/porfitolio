@@ -42,3 +42,11 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## GitHub Pages
+
+The production build is generated in `docs/` for the repository site path `/porfitolio/`.
+
+In the repository, open **Settings → Pages**, choose **Deploy from a branch**, then select branch `main` and folder `/docs`. Run `npm run build` and commit the updated `docs/` folder whenever the site changes.
+
+The published site is available at <https://juliabp2000.github.io/porfitolio/>.
